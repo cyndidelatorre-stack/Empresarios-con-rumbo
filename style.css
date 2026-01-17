@@ -1,0 +1,384 @@
+:root {
+    --bg-color: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --accent: #222222;
+    --light-grey: #f4f4f4;
+    --border-color: #eeeeee;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-transform: none;
+}
+
+.serif {
+    font-family: 'Source Serif Pro', Georgia, serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Header & Nav */
+header {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.logo span {
+    display: block;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 120px 0 80px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+/* Diagnostic Wrapper */
+#diagnostic-container {
+    min-height: 600px;
+    background: var(--light-grey);
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.step {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.6s var(--transition);
+}
+
+.step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--accent);
+}
+
+.options {
+    display: grid;
+    gap: 15px;
+}
+
+.option-btn {
+    background: white;
+    border: 1px solid var(--border-color);
+    padding: 20px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.2s var(--transition);
+    border-radius: 4px;
+}
+
+.option-btn:hover {
+    border-color: var(--accent);
+    background: var(--bg-color);
+}
+
+.option-btn.selected {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Result View */
+.result-card {
+    background: white;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.maturity-label {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--light-grey);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+/* Landing Content Sections */
+.section {
+    padding: 120px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+/* Team Section */
+.profile-card {
+    padding: 40px;
+    background: var(--light-grey);
+    border-radius: 4px;
+}
+
+.profile-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.profile-card .role {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* CTAs */
+.btn {
+    display: inline-block;
+    padding: 16px 32px;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+/* WhatsApp Float / Button */
+.whatsapp-btn {
+    background: #25D366;
+    color: white !important;
+    border: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .step h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Syllabus Section */
+.syllabus-grid {
+    display: grid;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.syllabus-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 30px;
+    align-items: start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.syllabus-item:last-child {
+    border-bottom: none;
+}
+
+.syllabus-number {
+    font-size: 3rem;
+    font-family: 'Source Serif Pro', serif;
+    color: var(--accent);
+    opacity: 0.2;
+    line-height: 1;
+}
+
+.syllabus-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.syllabus-content p {
+    color: var(--text-muted);
+}
+
+.syllabus-footer {
+    background: var(--light-grey);
+    padding: 60px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.result-box {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+.closing-phrase {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Profiles Section Updates */
+.facilitators-intro {
+    max-width: 800px;
+    margin-bottom: 80px;
+}
+
+.facilitators-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 24px;
+}
+
+.facilitators-intro p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+
+.profile-card {
+    height: 100%;
+}
+
+.profile-content h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 30px 0 15px;
+    color: var(--accent);
+}
+
+.focus-list,
+.education ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.focus-list li,
+.education ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.focus-list li::before,
+.education ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.highlight {
+    font-style: italic;
+    background: white;
+    padding: 20px;
+    border-left: 3px solid var(--accent);
+    margin: 30px 0;
+}
+
+.education h5 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: var(--text-main);
+}
+
+.section-footer-note {
+    margin-top: 80px;
+    text-align: center;
+    font-style: italic;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+    padding-top: 40px;
+}
