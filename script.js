@@ -375,7 +375,7 @@ async function downloadPlan() {
     doc.text(footerText2, 20, currentY + 17);
 
     doc.setFont("helvetica", "bold");
-    doc.text("7 de febrero", 20, currentY + 27);
+    doc.text("Sábado 21 de febrero 8:30 am", 20, currentY + 27);
 
     doc.setTextColor(0, 0, 255);
     const waLink = "https://wa.me/526141704597?text=Hola%20Cyn,%20quiero%20inscribirme%20al%20taller";
